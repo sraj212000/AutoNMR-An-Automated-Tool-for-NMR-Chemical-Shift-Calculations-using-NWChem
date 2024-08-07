@@ -105,6 +105,11 @@ This script performs the following task using NWChem module :
 **Step 3:** Run the following command on the terminal.
 ```
 python3 AutoNMR.py "CC(=C)Cl" "B3LYP" --num_conformers 10 --case 1
-
 ```
-Now here the smiles code is take for example is `CC(=C)Cl` and the DFT level functional used in the calculation is `B3LYP` you may also use other DFT level functionals as available in the [NWChem Documentation](https://nwchemgit.github.io/Density-Functional-Theory-for-Molecules.html) The `num_conformers` which describes the number of conformers the user wants to consider for studying the resepective molecule whose default value is 10. The last command line argument `case` explains that which spectrum user wants to study in the respective molecule. It is **1 for Hydrogen spectrum** and **6 for carbon spectrum** so it calculates the shielding tensor values of the specified atoms in the molecule.
+Now here the smiles code is take for example is `CC(=C)Cl` and the DFT level functional used in the calculation is `B3LYP` you may also use other DFT level functionals as available in the [NWChem Documentation](https://nwchemgit.github.io/Density-Functional-Theory-for-Molecules.html) 
+
+The `num_conformers` which describes the number of conformers the user wants to consider for studying the resepective molecule whose default value is 10.
+
+The last command line argument `case` explains that which spectrum user wants to study in the respective molecule. It is **1 for Hydrogen spectrum** and **6 for carbon spectrum** so it calculates the shielding tensor values of the specified atoms in the molecule.
+
+**Note** Here the calcultion are performed on No. of processors = 40 . In case your machine is compatible with less or more number of processor you need to mention the number of processors in the line
