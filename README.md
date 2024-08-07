@@ -76,3 +76,10 @@ The following tutorial provides instructions for installing NWChem on Linux. If 
     If NWChem is installed and properly configured, these commands will return the path to the nwchem executable. If NWChem is not installed or not in your PATH, these commands will not return any output.
 
 Congratulations! You have successfully installed NWChem on your system.
+## Usage of AutoNMR - A Case Study of 2-Chloropropene
+Let's begin to understand how to use AutoNMR tool step-by-step for getting the NMR Chemical Shifts and the NMR Spectrum of the respective atoms.Here we have taken the example of **2-Chloropropene** whose canonical smiles code is `CC(=C)Cl`
+
+The AutoNMR tool contains four important python script which can be downlaoded from this repository. The scripts are mentioned below:
+
+1. [**AutoNMR.py**](
+
