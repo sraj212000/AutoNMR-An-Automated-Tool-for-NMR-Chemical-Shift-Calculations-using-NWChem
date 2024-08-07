@@ -2,6 +2,7 @@
 ## Introduction
 AutoNMR is a novel Python package designed to streamline and automate the workflow of NMR chemical shift calculations using NWChem. By accepting a molecular structure in the form of a SMILES code, AutoNMR automates the processes of structure generation, conformer generation, geometry optimization, frequency calculations, free energy calculations, and NMR shielding tensor calculations. This package also incorporates Boltzmann weighting to provide accurate chemical shift predictions.
 ## Methodology
+AutoNMR Tool performs all the calclutions using NWChem. Below is the sequence wise algorithm which has been implemented in the tool to give the better results on the automation process.
 ### Structure & Conformer Generation
 
 AutoNMR uses RDKit to convert the SMILES code into a 3D molecular structure. Conformers are generated using RDKit's ETKDG method, which efficiently samples the conformational space of the molecule. Multiple conformers are generated to ensure comprehensive sampling.
@@ -34,4 +35,12 @@ Running the test on molecules and comparing it with the experimental known chemi
 
 The scaled values of chemical shifts are then extracted to plot the NMR spectrum using the Lorentzian function. The concept of J-Coupling and Pascal’s ratio for the intensity of peaks are also included to determine a relevant spectrum.
 
+## Requirements
+The following are the requirements to run the AutoNMR package:
 
+- **Python**: Ensure you have Python installed. AutoNMR is compatible with Python 3.6 and above.
+- **NWChem**: NWChem must be installed and properly configured on your system to perform quantum chemical calculations.
+- **Python Distribution**: The following Python distribuiton are required:
+  - **Anaconda 4.3**: It is recommended to use Anaconda for managing the Python environment and dependencies. Anaconda includes many of the necessary packages and makes installation easier.
+
+  Additional packages that need to be installed can be found in the `requirements.txt` file provided in the repository.
