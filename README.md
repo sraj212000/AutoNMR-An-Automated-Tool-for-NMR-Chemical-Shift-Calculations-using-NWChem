@@ -113,6 +113,9 @@ The last command line argument `case` explains that which spectrum user wants to
 
 **Note**
 
-Here the calcultion are performed on No. of processors = 40.In case your machine is compatible with less or more number of processor you need to mention the number of processors in the **line 439** of the script  [**AutoNMR.py**](AutoNMR.py) `np < No. of Processor , by default it is 40 >`
+Here the calcultion are performed on No. of processors = 40.In case your machine is compatible with less or more number of processor you need to mention the number of processors in the **line 439** of the script  [**AutoNMR.py**](AutoNMR.py) ` np < No. of Processor , by default it is 40 > `
+
+
+
 
 
