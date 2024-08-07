@@ -83,5 +83,6 @@ The AutoNMR tool contains four important python script which can be downlaoded f
 
 1. [**AutoNMR.py**](AutoNMR.py)- This script performs all the task related to NMR Shift calculation using NWChem. This returns the boltzmann calculated shielding tensor values of atoms for further study. Further details regarding the script can be found later in this tutorial.
 2. [**Linear_Regression.py**](Linear_Regression.py) - This script perfoms linear regression calclution on a set of data ( Experimental and calculated ) to build a model which returns the slope and intercept required to scale the shielding tensor values obtained from [**AutoNMR.py**](AutoNMR.py).
-3. [**Scaling.py**](Scaling.py)
+3. [**Scaling.py**](Scaling.py)- This script gives the final calculated NMR Chemcial shift values after scaling the resulted output of shielding tensor values obtained from [**AutoNMR.py**](AutoNMR.py) using the slope and the intercept values obtained from [**Linear_Regression.py**](Linear_Regression.py).
+4. [**NMR_Simulation.py**](NMR_Simulation.py) - This script gives you the NMR Spectrum of the resultant chemical shift obtained from the [**Scaling.py**](Scaling.py). 
 
