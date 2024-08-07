@@ -77,6 +77,7 @@ The following tutorial provides instructions for installing NWChem on Linux. If 
 
 Congratulations! You have successfully installed NWChem on your system.
 ## Usage of AutoNMR - A Case Study of 2-Chloropropene
+### Brief Introduction
 Let's begin to understand how to use AutoNMR tool step-by-step for getting the NMR Chemical Shifts and the NMR Spectrum of the respective atoms.Here we have taken the example of **2-Chloropropene** whose canonical smiles code is `CC(=C)Cl`
 
 The AutoNMR tool contains four important python script which can be downlaoded from this repository. The scripts are mentioned below:
@@ -84,5 +85,26 @@ The AutoNMR tool contains four important python script which can be downlaoded f
 1. [**AutoNMR.py**](AutoNMR.py)- This script performs all the task related to NMR Shift calculation using NWChem. This returns the boltzmann calculated shielding tensor values of atoms for further study. Further details regarding the script can be found later in this tutorial.
 2. [**Linear_Regression.py**](Linear_Regression.py) - This script perfoms linear regression calclution on a set of data ( Experimental and calculated ) to build a model which returns the slope and intercept required to scale the shielding tensor values obtained from [**AutoNMR.py**](AutoNMR.py).
 3. [**Scaling.py**](Scaling.py)- This script gives the final calculated NMR Chemcial shift values after scaling the resulted output of shielding tensor values obtained from [**AutoNMR.py**](AutoNMR.py) using the slope and the intercept values obtained from [**Linear_Regression.py**](Linear_Regression.py).
-4. [**NMR_Simulation.py**](NMR_Simulation.py) - This script gives you the NMR Spectrum of the resultant chemical shift obtained from the [**Scaling.py**](Scaling.py). 
+4. [**NMR_Simulation.py**](NMR_Simulation.py) - This script gives you the NMR Spectrum of the resultant chemical shift obtained from the [**Scaling.py**](Scaling.py).
 
+After Downloading these script create a working directory where you can save all these script together, say `AutoNMR` which contains all the four script mentioned above.
+
+### Beiginning with [**AutoNMR.py**](AutoNMR.py) - First Step
+This script performs the following task using NWChem module : 
+- Structure and Conformer Generation
+- Generates NWChem Input File
+- NMR Shielding Tensor Calculation
+- Free Energy Calculation
+- Boltzmann Weighting
+- Returns the Boltzmann weighted shielding tensor values
+
+**Step 1:** Navigate the terminal to the working directory say `AutoNMR` which contains all these files.
+
+**Step 2:** Get the canonical smiles of the molecule here the example is of **2-Chloropropene** whose canonical smiles code is `CC(=C)Cl`
+
+**Step 3:** Run the following command on the terminal.
+```
+python3 AutoNMR.py "CC(=C)Cl" "B3LYP" --num_conformers 10 --case 1
+
+```
+Now here the smiles code is take for example is `CC(=C)Cl` and the DFT level functional used in the calculation is `B3LYP` you may also use other DFT level functionals as available in the [NWChem Documentation](https://nwchemgit.github.io/Density-Functional-Theory-for-Molecules.html) The `num_conformers` which describes the number of conformers the user wants to consider for studying the resepective molecule whose default value is 10. The last command line argument `case` explains that which spectrum user wants to study in the respective molecule. It is **1 for Hydrogen spectrum** and **6 for carbon spectrum** so it calculates the shielding tensor values of the specified atoms in the molecule.
