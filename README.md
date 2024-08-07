@@ -113,4 +113,5 @@ The `num_conformers` which describes the number of conformers the user wants to 
 The last command line argument `case` explains that which spectrum user wants to study in the respective molecule. It is **1 for Hydrogen spectrum** and **6 for carbon spectrum** so it calculates the shielding tensor values of the specified atoms in the molecule.
 
 **Note**
-Here the calcultion are performed on No. of processors = 40 . In case your machine is compatible with less or more number of processor you need to mention the number of processors in the **line 439** `np < No. of Processor , by default it is 40 >`
+
+Here the calcultion are performed on No. of processors = 40 . In case your machine is compatible with less or more number of processor you need to mention the number of processors in the **line 439** of the script  [**AutoNMR.py**](AutoNMR.py) `np < No. of Processor , by default it is 40 >`
