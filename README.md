@@ -81,5 +81,6 @@ Let's begin to understand how to use AutoNMR tool step-by-step for getting the N
 
 The AutoNMR tool contains four important python script which can be downlaoded from this repository. The scripts are mentioned below:
 
-1. [**AutoNMR.py**](
+1. [**AutoNMR.py**](AutoNMR.py)- This script performs all the task related to NMR Shift calculation using NWChem. Further details regarding the script can be found later in this tutorial.
+2. [**Linear_Regression.py**](
 
