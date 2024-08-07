@@ -38,9 +38,41 @@ The scaled values of chemical shifts are then extracted to plot the NMR spectrum
 ## Requirements
 The following are the requirements to run the AutoNMR package:
 
+### Operating System
+AutoNMR has been tested on the following operating systems:
+- **Linux**: Preferred due to better support for NWChem and scientific computing.
+- **macOS**: Compatible, but ensure NWChem is properly configured.
+- **Windows**: Can be used with appropriate configuration, but might require additional setup for NWChem.
+### Software
 - **Python**: Ensure you have Python installed. AutoNMR is compatible with Python 3.6 and above.
 - **NWChem**: NWChem must be installed and properly configured on your system to perform quantum chemical calculations.
 - **Python Distribution**: The following Python distribuiton are required:
   - **Anaconda 4.3**: It is recommended to use Anaconda for managing the Python environment and dependencies. Anaconda includes many of the necessary packages and makes installation easier.
 
   Additional packages that need to be installed can be found in the `requirements.txt` file provided in the repository.
+## Installation Guide for NWChem
+The following tutorial provides instructions for installing NWChem on Linux. If you are using a different operating system, such as Windows or macOS, please visit the [NWChem website](https://nwchemgit.github.io/Download.html#nwchem-availability-in-linux-distributions) for specific instructions tailored to your OS.
+### Installation Steps
+1. **Open the terminal.**
+
+2. **Update your package list by running the following command:**
+
+    ```sh
+    sudo apt update
+    ```
+
+3. **Install NWChem by running the following command:**
+
+    ```sh
+    sudo apt install nwchem
+    ```
+
+4. **Verify the installation by running the following command to check the NWChem command is available in your system's PATH**
+
+    ```sh
+    command -v nwchem
+    ```
+
+    If NWChem is installed and properly configured, these commands will return the path to the nwchem executable. If NWChem is not installed or not in your PATH, these commands will not return any output.
+
+Congratulations! You have successfully installed NWChem on your system.
