@@ -209,8 +209,17 @@ Here is the cluster midpoint shift values of the two hydrogen environments prese
 
 ## [**NMR_Simulation.py**](NMR_Simulation.py) - Final Step 
 
+Since now we have obtained the value of the NMR Chemical Shifts of each of the hydrogen environments , wer can get the NMR Spectrum plot of the molecule.
 
+Run the following command on the terminal to get the 1H NMR Spectrum of 2-chloropropene
+```
+python3 NMR_Simulation.py "CC(=C)Cl"
+```
+( Here the Value of J-coupling is 7.0 and the spectrometer frequency considered in the calculation is 90000000 Hz. )
 
+The Preview of the spectrum obtained can be seen below:
+
+ 
 
 
   
