@@ -88,7 +88,7 @@ The AutoNMR tool contains four important python script which can be downlaoded f
 
 After Downloading these script create a working directory where you can save all these script together, say `AutoNMR` which contains all the four script mentioned above.
 
-### Beiginning with [**AutoNMR.py**](AutoNMR.py) - First Step
+## Beiginning with [**AutoNMR.py**](AutoNMR.py) - First Step
 This script performs the following task using NWChem module : 
 - Structure and Conformer Generation
 - Generates NWChem Input File
@@ -97,11 +97,11 @@ This script performs the following task using NWChem module :
 - Boltzmann Weighting
 - Returns the Boltzmann weighted shielding tensor values
 
-**Step 1:** Navigate the terminal to the working directory say `AutoNMR` which contains all these files.
+`**Step 1:**` Navigate the terminal to the working directory say `AutoNMR` which contains all these files.
 
-**Step 2:** Get the canonical smiles of the molecule here the example is of **2-Chloropropene** whose canonical smiles code is `CC(=C)Cl`
+`**Step 2:**` Get the canonical smiles of the molecule here the example is of **2-Chloropropene** whose canonical smiles code is `CC(=C)Cl`
 
-**Step 3:** Run the following command on the terminal.
+`**Step 3:**` Run the following command on the terminal.
 ```
 python3 AutoNMR.py "CC(=C)Cl" "B3LYP" --num_conformers 10 --case 1
 ```
@@ -111,10 +111,73 @@ The `num_conformers` which describes the number of conformers the user wants to 
 
 The last command line argument `case` explains that which spectrum user wants to study in the respective molecule. It is **1 for Hydrogen spectrum** and **6 for carbon spectrum** so it calculates the shielding tensor values of the specified atoms in the molecule.
 
-**Note**
+`**Note**`
 
-Here the calcultion are performed on No. of processors = 40.In case your machine is compatible with less or more number of processor you need to mention the number of processors in the **line 439** of the script  [**AutoNMR.py**](AutoNMR.py) ` np < No. of Processor , by default it is 40 > `
+Here the calcultion are performed on No. of processors = 40. In case your machine is compatible with less or more number of processor you need to mention the number of processors in the **line 439** of the script  [**AutoNMR.py**](AutoNMR.py) ` np < No. of Processor , by default it is 40 > `
 
+`**Step 4:**` The terminal shows that NWChem Calculation is running one by one for each of the conformer and after the calculation is over , open the working directory here `AutoNMR` to see the files obtained after calculation. 
+
+- Open the filename `chemical_shifts.xlsx`. For example for the molecule 2-chloropropene the file `chemical_shifts.xlsx` is :
+
+  
+| Atom | Shielding Tensor |
+|------|------------------|
+| H5   | 27.1085447911423 |
+| H3   | 30.564995548431  |
+| H2   | 30.3950244022379 |
+| H1   | 30.4804359376167 |
+| H4   | 27.1786016800279 |
+
+These are the values of the shielding tensors of each of the hydrogen atoms of the molecule 2-chloropropene. Now you have to calculate the cluster midpoint values (Average Tensor Values) of the hydrogen atoms of this molecule which is under same environment.
+In 2-chloropropene whose smiles code is `CC(=C)Cl` there are two hydrogen environment here one is **3-hydrogens of methyl group** and other is **2-hydrogens of the double bonded sp2 carbon**. You can see the structure below:
+
+The `H1 H2 and H3` are in same environment and `H4 and H5` are in similar environment as they have almost the similar values of shielding tensor. Now calcluate the average shielding tensor value for `H1 H2 and H3` and similarly for `H4 and H5` and edit the `chemical_shifts.xlsx` file.
+
+The preview of the edited file is shown  below:
+
+| Atom | Shielding Tensor   | Atoms     | Average Tensor    |
+|------|--------------------|-----------|-------------------|
+| H5   | 27.1085447911423   | H1 H2 H3  | 30.4801519627618  |
+| H3   | 30.564995548431    | H4 H5     | 27.1435732355851  |
+| H2   | 30.3950244022379   |           |                   |
+| H1   | 30.4804359376167   |           |                   |
+| H4   | 27.1786016800279   |           |                   |
+
+Just save the chemical_shifts.xlsx file and close it. Let's now move to the next script.
+
+## [**Linear_Regression.py**](Linear_Regression.py) and [**Scaling.py**](Scaling.py) - Second Step
+As mentioned earlier,[**Linear_Regression.py**](Linear_Regression.py) script is designed to be executed once on the entire dataset. This script performs calculations at a consistent level of theory to create a model that provides the slope and intercept values. These values are then used to reference the average shielding tensor value calculated above. You can create your own data set based on the experimental value and the calculated value of shielding tensor which can be obtained from above descirbed calculation steps. 
+
+Here is a preview of the data set ( `data.xlsx` ) file :
+
+| shift | tensor  |
+|-------|---------|
+| 5.28  | 26.1331 |
+| 7.21  | 23.9118 |
+| 3.5   | 28.2132 |
+| 4.22  | 27.4418 |
+| 3.6   | 28.0525 |
+| 1.5   | 30.4292 |
+| 2.7   | 29.0756 |
+| 1.55  | 30.4677 |
+| 4.4   | 27.304  |
+| 0.54  | 31.392  |
+| 5.5   | 26.0877 |
+| 6.36  | 25.0357 |
+| 6.49  | 25.0536 |
+| 9.69  | 21.5336 |
+| 2.12  | 29.6074 |
+| 2.54  | 29.2436 |
+
+Here the `shift` is the experimental shift values and the `tensor` is the calculated tensor values of the atoms on same level of theory.
+
+`**Step 1:**` Once the dataset is ready, save it in `data.xlsx` and then run the following command on the terminal.
+
+
+
+
+
+  
 
 
 
