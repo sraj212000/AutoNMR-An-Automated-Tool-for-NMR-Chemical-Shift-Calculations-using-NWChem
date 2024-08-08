@@ -186,6 +186,29 @@ The preview of the slope and intercept value is shown below:
 | Slope     | -1.09373905411539  |
 | Intercept | 32.0301102772846   |
 
+**Step 2:** Using this slope and intercept obtained above, Now run the following command on the terminal. The accuracy of this slope and intercept value is cruical step for determining the accurate chemical shift values of atoms.
+```
+python3 Scaling.py --slope -1.0937391 --intercept 32.0301103
+
+```
+Here the Command line argument `slope` is he value of the slope of your linear regression model and the `intercept` is the intercept value obtained from you linear regression model.
+
+After running this command , open the `chemical_shifts.xlsx` file and the shift values for the respective hydrogen environment of **2-chloropropene** can be seen.
+
+The Preview of the `chemical_shifts.xlsx` file is shown below:
+
+| Atom | Shielding Tensor   | Atoms     | Average Tensor    | Shift Values          |
+|------|--------------------|-----------|-------------------|-----------------------|
+| H5   | 27.1085447911423   | H1 H2 H3  | 30.4801519627618  | 1.41711888807687       |
+| H3   | 30.564995548431    | H4 H5     | 27.1435732355851  | 4.46773555449823       |
+| H2   | 30.3950244022379   |           |                   |                       |
+| H1   | 30.4804359376167   |           |                   |                       |
+| H4   | 27.1786016800279   |           |                   |                       |
+
+Here is the cluster midpoint shift values of the two hydrogen environments present in **2-chloropropene**. Thus this is the final result obtained from the calculations.
+
+## [**NMR_Simulation.py**](NMR_Simulation.py) - Final Step 
+
 
 
 
