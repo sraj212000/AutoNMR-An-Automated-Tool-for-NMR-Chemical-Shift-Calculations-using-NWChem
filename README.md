@@ -171,7 +171,20 @@ Here is a preview of the data set ( `data.xlsx` ) file :
 
 Here the `shift` is the experimental shift values and the `tensor` is the calculated tensor values of the atoms on same level of theory.
 
-`**Step 1:**` Once the dataset is ready, save it in `data.xlsx` and then run the following command on the terminal.
+`**Step 1:**` Once the dataset is ready, save it in `data.xlsx` file in the working directory (here `AutoNMR`) and then run the following command on the terminal.
+
+```
+python3 Linear_Regression.py
+
+```
+This returns the slope and the intercept value required for scaling the average tensor values to get the exact chemical shift value of the atoms. Open the file `data.xlsx` and a new sheet `Regression_Results` will be generated in `data.xlsx` file. This contains the value of slope and intercept required in next step. 
+
+The preview of the slope and intercept value is shown below:
+
+| Parameter | Value              |
+|-----------|--------------------|
+| Slope     | -1.09373905411539  |
+| Intercept | 32.0301102772846   |
 
 
 
