@@ -218,6 +218,7 @@ python3 NMR_Simulation.py "CC(=C)Cl"
 ( Here the Value of J-coupling is 7.0 and the spectrometer frequency considered in the calculation is 90000000 Hz. )
 
 The Preview of the spectrum obtained can be seen below:
+![spectrum](
 
  
 
