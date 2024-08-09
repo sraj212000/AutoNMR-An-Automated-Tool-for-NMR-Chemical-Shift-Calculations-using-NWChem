@@ -48,8 +48,9 @@ AutoNMR has been tested on the following operating systems:
 - **NWChem**: NWChem must be installed and properly configured on your system to perform quantum chemical calculations.
 - **Python Distribution**: The following Python distribuiton are required:
   - **Anaconda 4.3**: It is recommended to use Anaconda for managing the Python environment and dependencies. Anaconda includes many of the necessary packages and makes installation easier.
-
-  Additional packages that need to be installed can be found in the `requirements.txt` file provided in the repository.
+  - **RDKit 2024.03.5**: RDKit is important tool required for building 3D structure and generating conformers of the molecule. The installation guide of RDKit can be referred [here](https://www.rdkit.org/docs/Install.html)
+  
+Additional packages that need to be installed can be found in the `requirements.txt` file provided in the repository.
 ## Installation Guide for NWChem
 The following tutorial provides instructions for installing NWChem on Linux. If you are using a different operating system, such as Windows or macOS, please visit the [NWChem website](https://nwchemgit.github.io/Download.html#nwchem-availability-in-linux-distributions) for specific instructions tailored to your OS.
 ### Installation Steps
