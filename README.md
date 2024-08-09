@@ -131,8 +131,11 @@ Here the calcultion are performed on No. of processors = 40. In case your machin
 | H4   | 27.1786016800279 |
 
 These are the values of the shielding tensors of each of the hydrogen atoms of the molecule 2-chloropropene. Now you have to calculate the cluster midpoint values (Average Tensor Values) of the hydrogen atoms of this molecule which is under same environment.
-In 2-chloropropene whose smiles code is `CC(=C)Cl` there are two hydrogen environment here one is **3-hydrogens of methyl group** and other is **2-hydrogens of the double bonded sp2 carbon**. You can see the structure below:
+In 2-chloropropene whose smiles code is `CC(=C)Cl` there are two hydrogen environment here one is **3-hydrogens of methyl group** and other is **2-hydrogens of the double bonded sp2 carbon**. 
 
+You can see the structure below:
+
+![2-Chloropropene](2-chloropropene.jpeg)
 The `H1 H2 and H3` are in same environment and `H4 and H5` are in similar environment as they have almost the similar values of shielding tensor. Now calcluate the average shielding tensor value for `H1 H2 and H3` and similarly for `H4 and H5` and edit the `chemical_shifts.xlsx` file.
 
 The preview of the edited file is shown  below:
