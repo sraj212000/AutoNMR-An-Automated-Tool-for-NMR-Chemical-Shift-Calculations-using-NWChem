@@ -1,0 +1,9 @@
+Other Requirements are mentioned below:
+
+1. Anaconda Python libraries
+	a. Numpy
+	b. Pandas
+	c. mathplotlib
+2. RDKit 2024.03.5
+3. Openbabel 3.1.1
+
