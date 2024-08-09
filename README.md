@@ -148,7 +148,7 @@ Just save the `chemical_shifts.xlsx` file and close it. Let's now move to the ne
 ## [**Linear_Regression.py**](Linear_Regression.py) and [**Scaling.py**](Scaling.py) - Second Step
 As mentioned earlier,[**Linear_Regression.py**](Linear_Regression.py) script is designed to be executed once on the entire dataset. This script performs calculations at a consistent level of theory to create a model that provides the slope and intercept values. These values are then used to reference the average shielding tensor value calculated above. You can create your own data set based on the experimental value and the calculated value of shielding tensor which can be obtained from above descirbed calculation steps. 
 
-Here is a preview of the data set ( `data.xlsx` ) file :
+Here is a preview of the data set  [`data.xlsx`](data.xlsx)  file :
 
 | shift | tensor  |
 |-------|---------|
