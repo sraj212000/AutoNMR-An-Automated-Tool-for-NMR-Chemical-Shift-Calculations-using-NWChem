@@ -50,7 +50,7 @@ AutoNMR has been tested on the following operating systems:
   - **Anaconda 4.3**: It is recommended to use Anaconda for managing the Python environment and dependencies. Anaconda includes many of the necessary packages and makes installation easier.
   - **RDKit 2024.03.5**: RDKit is important tool required for building 3D structure and generating conformers of the molecule. The installation guide of RDKit can be referred [here](https://www.rdkit.org/docs/Install.html)
   
-Additional packages that need to be installed can be found in the `requirements.txt` file provided in the repository.
+Additional packages that need to be installed can be found in the [`requirements.txt`](requirements.txt) file provided in the repository.
 ## Installation Guide for NWChem
 The following tutorial provides instructions for installing NWChem on Linux. If you are using a different operating system, such as Windows or macOS, please visit the [NWChem website](https://nwchemgit.github.io/Download.html#nwchem-availability-in-linux-distributions) for specific instructions tailored to your OS.
 ### Installation Steps
@@ -112,10 +112,11 @@ The `num_conformers` which describes the number of conformers the user wants to 
 
 The last command line argument `case` explains that which spectrum user wants to study in the respective molecule. It is **1 for Hydrogen spectrum** and **6 for carbon spectrum** so it calculates the shielding tensor values of the specified atoms in the molecule.
 
-`**Note**`
+```
+**Note**
+Here the calcultion are performed on No. of processors = 40. In case your machine is compatible with less or more number of processor you need to mention the number of processors in the **line 439** of the script  **AutoNMR.py** , np < No. of Processor , by default it is 1 > `
 
-Here the calcultion are performed on No. of processors = 40. In case your machine is compatible with less or more number of processor you need to mention the number of processors in the **line 439** of the script  [**AutoNMR.py**](AutoNMR.py) ` np < No. of Processor , by default it is 40 > `
-
+```
 `**Step 4:**` The terminal shows that NWChem Calculation is running one by one for each of the conformer and after the calculation is over , open the working directory here `AutoNMR` to see the files obtained after calculation. 
 
 - Open the filename `chemical_shifts.xlsx`. For example for the molecule 2-chloropropene the file `chemical_shifts.xlsx` is :
