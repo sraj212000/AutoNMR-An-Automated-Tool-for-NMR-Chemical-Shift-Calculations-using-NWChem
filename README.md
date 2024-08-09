@@ -48,8 +48,9 @@ AutoNMR has been tested on the following operating systems:
 - **NWChem**: NWChem must be installed and properly configured on your system to perform quantum chemical calculations.
 - **Python Distribution**: The following Python distribuiton are required:
   - **Anaconda 4.3**: It is recommended to use Anaconda for managing the Python environment and dependencies. Anaconda includes many of the necessary packages and makes installation easier.
-
-  Additional packages that need to be installed can be found in the `requirements.txt` file provided in the repository.
+  - **RDKit 2024.03.5**: RDKit is important tool required for building 3D structure and generating conformers of the molecule. The installation guide of RDKit can be referred [here](https://www.rdkit.org/docs/Install.html)
+  
+Additional packages that need to be installed can be found in the [`requirements.txt`](requirements.txt) file provided in the repository.
 ## Installation Guide for NWChem
 The following tutorial provides instructions for installing NWChem on Linux. If you are using a different operating system, such as Windows or macOS, please visit the [NWChem website](https://nwchemgit.github.io/Download.html#nwchem-availability-in-linux-distributions) for specific instructions tailored to your OS.
 ### Installation Steps
@@ -111,10 +112,11 @@ The `num_conformers` which describes the number of conformers the user wants to 
 
 The last command line argument `case` explains that which spectrum user wants to study in the respective molecule. It is **1 for Hydrogen spectrum** and **6 for carbon spectrum** so it calculates the shielding tensor values of the specified atoms in the molecule.
 
-`**Note**`
+```
+**Note**
+Here the calcultion are performed on No. of processors = 40. In case your machine is compatible with less or more number of processor you need to mention the number of processors in the **line 439** of the script  **AutoNMR.py** , np < No. of Processor , by default it is 1 > `
 
-Here the calcultion are performed on No. of processors = 40. In case your machine is compatible with less or more number of processor you need to mention the number of processors in the **line 439** of the script  [**AutoNMR.py**](AutoNMR.py) ` np < No. of Processor , by default it is 40 > `
-
+```
 `**Step 4:**` The terminal shows that NWChem Calculation is running one by one for each of the conformer and after the calculation is over , open the working directory here `AutoNMR` to see the files obtained after calculation. 
 
 - Open the filename `chemical_shifts.xlsx`. For example for the molecule 2-chloropropene the file `chemical_shifts.xlsx` is :
@@ -148,7 +150,7 @@ Just save the `chemical_shifts.xlsx` file and close it. Let's now move to the ne
 ## [**Linear_Regression.py**](Linear_Regression.py) and [**Scaling.py**](Scaling.py) - Second Step
 As mentioned earlier,[**Linear_Regression.py**](Linear_Regression.py) script is designed to be executed once on the entire dataset. This script performs calculations at a consistent level of theory to create a model that provides the slope and intercept values. These values are then used to reference the average shielding tensor value calculated above. You can create your own data set based on the experimental value and the calculated value of shielding tensor which can be obtained from above descirbed calculation steps. 
 
-Here is a preview of the data set ( `data.xlsx` ) file :
+Here is a preview of the data set  [`data.xlsx`](data.xlsx)  file :
 
 | shift | tensor  |
 |-------|---------|
@@ -218,7 +220,23 @@ python3 NMR_Simulation.py "CC(=C)Cl"
 ( Here the Value of J-coupling is 7.0 and the spectrometer frequency considered in the calculation is 90000000 Hz. )
 
 The Preview of the spectrum obtained can be seen below:
+
 ![spectrum](2-Chloropropene/Spectrum.png)
+
+## References 
+
+1. E. Aprà, E. J. Bylaska, W. A. de Jong, N. Govind, K. Kowalski, T. P. Straatsma, M. Valiev, H. J. J. van Dam, Y. Alexeev, J. Anchell, V. Anisimov, F. W. Aquino, R. Atta-Fynn, J. Autschbach, N. P. Bauman, J. C. Becca, D. E. Bernholdt, K. Bhaskaran-Nair, S. Bogatko, P. Borowski, J. Boschen, J. Brabec, A. Bruner, E. Cauët, Y. Chen, G. N. Chuev, C. J. Cramer, J. Daily, M. J. O. Deegan, T. H. Dunning Jr., M. Dupuis, K. G. Dyall, G. I. Fann, S. A. Fischer, A. Fonari, H. Früchtl, L. Gagliardi, J. Garza, N. Gawande, S. Ghosh, K. Glaesemann, A. W. Götz, J. Hammond, V. Helms, E. D. Hermes, K. Hirao, S. Hirata, M. Jacquelin, L. Jensen, B. G. Johnson, H. Jónsson, R. A. Kendall, M. Klemm, R. Kobayashi, V. Konkov, S. Krishnamoorthy, M. Krishnan, Z. Lin, R. D. Lins, R. J. Littlefield, A. J. Logsdail, K. Lopata, W. Ma, A. V. Marenich, J. Martin del Campo, D. Mejia-Rodriguez, J. E. Moore, J. M. Mullin, T. Nakajima, D. R. Nascimento, J. A. Nichols, P. J. Nichols, J. Nieplocha, A. Otero-de-la-Roza, B. Palmer, A. Panyala, T. Pirojsirikul, B. Peng, R. Peverati, J. Pittner, L. Pollack, R. M. Richard, P. Sadayappan, G. C. Schatz, W. A. Shelton, D. W. Silverstein, D. M. A. Smith, T. A. Soares, D. Song, M. Swart, H. L. Taylor, G. S. Thomas, V. Tipparaju, D. G. Truhlar, K. Tsemekhman, T. Van Voorhis, Á. Vázquez-Mayagoitia, P. Verma, O. Villa, A. Vishnu, K. D. Vogiatzis, D. Wang, J. H. Weare, M. J. Williamson, T. L. Windus, K. Woliński, A. T. Wong, Q. Wu, C. Yang, Q. Yu, M. Zacharias, Z. Zhang, Y. Zhao, and R. J. Harrison, “NWChem: Past, present, and future”, The Journal of Chemical Physics 152, 184102 (2020). DOI: ([10.1063/5.0004997](https://doi.org/10.1063/5.0004997))
+
+2. Van Rossum, G., & Drake, F. L. (2009). Python 3 Reference Manual. Scotts Valley, CA: CreateSpace.
+
+3. Willoughby, P. H.; Jansma, M. J.; Hoye, T. R. A Guide to Small-Molecule Structure Assignment through Computation of (1H and 13C) NMR Chemical Shifts. Nature protocols 2014, 9 (3), 643–660. [doi.org/10.1038/nprot.2014.042.](https://doi.org/10.1038/nprot.2014.042.)
+
+4. Anaconda Software Distribution. (2020). Anaconda Documentation. Anaconda Inc. Retrieved from https://docs.anaconda.com/
+
+5. RDKit: Open-source cheminformatics. https://www.rdkit.org
+
+6. O'Boyle, N.M., Banck, M., James, C.A. et al. Open Babel: An open chemical toolbox. J Cheminform 3, 33 (2011). https://doi.org/10.1186/1758-2946-3-33
+
 
  
 
