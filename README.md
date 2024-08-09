@@ -143,7 +143,7 @@ The preview of the edited file is shown  below:
 | H1   | 30.4804359376167   |           |                   |
 | H4   | 27.1786016800279   |           |                   |
 
-Just save the chemical_shifts.xlsx file and close it. Let's now move to the next script.
+Just save the `chemical_shifts.xlsx` file and close it. Let's now move to the next script.
 
 ## [**Linear_Regression.py**](Linear_Regression.py) and [**Scaling.py**](Scaling.py) - Second Step
 As mentioned earlier,[**Linear_Regression.py**](Linear_Regression.py) script is designed to be executed once on the entire dataset. This script performs calculations at a consistent level of theory to create a model that provides the slope and intercept values. These values are then used to reference the average shielding tensor value calculated above. You can create your own data set based on the experimental value and the calculated value of shielding tensor which can be obtained from above descirbed calculation steps. 
@@ -195,7 +195,7 @@ Here the Command line argument `slope` is he value of the slope of your linear r
 
 After running this command , open the `chemical_shifts.xlsx` file and the shift values for the respective hydrogen environment of **2-chloropropene** can be seen.
 
-The Preview of the `chemical_shifts.xlsx` file is shown below:
+The Preview of the [`chemical_shifts.xlsx`](2-Chloropropene/chemical_shifts.xlsx) file is shown below:
 
 | Atom | Shielding Tensor   | Atoms     | Average Tensor    | Shift Values          |
 |------|--------------------|-----------|-------------------|-----------------------|
@@ -218,6 +218,7 @@ python3 NMR_Simulation.py "CC(=C)Cl"
 ( Here the Value of J-coupling is 7.0 and the spectrometer frequency considered in the calculation is 90000000 Hz. )
 
 The Preview of the spectrum obtained can be seen below:
+![spectrum](2-Chloropropene/Spectrum.png)
 
  
 
