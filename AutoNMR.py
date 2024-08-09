@@ -436,7 +436,7 @@ def main():
     for nwchem_input_file in nwchem_input_files:
         nwchem_input_file, nwchem_output_file = run(nwchem_input_file)
         nwchem_command = f"nwchem {nwchem_input_file} > {nwchem_output_file}"
-        final_command = f"mpiexec --use-hwthread-cpus -np 40 {nwchem_command}"
+        final_command = f"mpiexec --use-hwthread-cpus -np 1 {nwchem_command}"
         run_nwchem(final_command)
 
     output_dir = './'  # Directory containing NWChem output files
