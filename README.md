@@ -230,6 +230,12 @@ The Preview of the spectrum obtained can be seen below:
 3. Willoughby, P. H.; Jansma, M. J.; Hoye, T. R. A Guide to Small-Molecule Structure Assignment through Computation of (1H and 13C) NMR Chemical Shifts. Nature protocols 2014, 9 (3), 643–660. [doi.org/10.1038/nprot.2014.042.](https://doi.org/10.1038/nprot.2014.042.)
 
 4. Anaconda Software Distribution. (2020). Anaconda Documentation. Anaconda Inc. Retrieved from https://docs.anaconda.com/
+
+5. RDKit: Open-source cheminformatics. https://www.rdkit.org
+
+6. O'Boyle, N.M., Banck, M., James, C.A. et al. Open Babel: An open chemical toolbox. J Cheminform 3, 33 (2011). https://doi.org/10.1186/1758-2946-3-33
+
+
  
 
 
