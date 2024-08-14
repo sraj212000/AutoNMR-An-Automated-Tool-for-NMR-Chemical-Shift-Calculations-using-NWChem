@@ -1,0 +1,57 @@
+start
+
+title "Molecule conformer 0"
+
+memory total 4000 mb
+
+echo
+geometry units angstroms
+   C     -0.6924    -0.5305    -0.0794
+   C      0.8105    -0.3241    -0.0726
+   C     -0.1180     0.8543     0.1520
+   H     -1.0928    -1.0194     0.8339
+   H     -1.1302    -0.6828    -1.0887
+   H      1.3196    -0.6883     0.8448
+   H      1.2820    -0.3513    -1.0778
+   H     -0.1705     1.2028     1.2052
+   H     -0.2082     1.5395    -0.7174
+end
+
+
+basis spherical
+* library 6-311G
+end
+
+driver
+  maxiter 500
+  xyz final
+end
+
+relativistic
+  zora on
+  zora:cutoff_NMR 1d-8
+  zora:cutoff 1d-30
+end
+
+dft
+  direct
+  grid fine
+  xc B3LYP
+  mult 1
+  maxiter 1500
+  noprint "final vectors analysis" multipole
+end
+
+task dft optimize
+
+task dft freq
+
+property
+  shielding 6 4 5 6 7 8 9
+end
+
+cosmo
+   solvent cdcl3
+end
+
+task dft property
